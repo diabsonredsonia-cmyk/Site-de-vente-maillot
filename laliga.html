@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bientôt disponible | Mon Site</title>
+    <link rel="icon" type="image/svg"  href="images/logo.jpeg">
+    <style>
+        /* Styles de base */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #333;
+        }
+
+        .container {
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            max-width: 500px;
+            width: 90%;
+        }
+
+        /* Animation simple du logo ou de l'icône */
+        .icon {
+            font-size: 50px;
+            margin-bottom: 20px;
+            display: inline-block;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+            40% {transform: translateY(-10px);}
+            60% {transform: translateY(-5px);}
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+
+        p {
+            font-size: 1.1rem;
+            color: #7f8c8d;
+            line-height: 1.6;
+        }
+
+        .social-links {
+            margin-top: 2rem;
+        }
+
+        .social-links a {
+            text-decoration: none;
+            color: white;
+            background: #4a90e2;
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: transform 0.3s, background 0.3s;
+            display: inline-block;
+        }
+
+        .social-links a:hover {
+            background: #357abd;
+            transform: scale(1.05);
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 5px 15px;
+            background: #e8f4fd;
+            color: #4a90e2;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="badge">NOUVELLE SAISON 2026</div>
+        <div class="icon">⚽</div> <h1>C'est pour bientôt !</h1>
+        <p>
+            La nouvelle collection de maillots arrive bientôt. 
+        Préparez-vous à porter fièrement vos couleurs !
+        </p>
+        
+        <div class="social-links">
+            <a href="https://wa.me/+22585802839" target="_blank">Nous contacter sur WhatsApp</a>
+        </div>
+    </div>
+
+</body>
+</html>

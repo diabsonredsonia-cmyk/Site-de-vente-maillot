@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Commander — Maillots de Qualité</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="commander.css" />
+  <link rel="icon" type="image/svg"  href="images/logo.jpeg">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,900;1,900&display=swap" rel="stylesheet"/>
+</head>
+<body class="cmd-body">
+
+  <div class="cmd-page">
+    <div class="cmd-container">
+
+      <a href="index.html" class="cmd-back">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M19 12H5M12 5l-7 7 7 7"/>
+        </svg>
+        Retour à la boutique
+      </a>
+
+      <div class="cmd-card">
+
+        <!-- En-tête -->
+        <div class="cmd-header">
+          <div class="logo-text">
+            <span class="logo-maillots">MAILLOTS</span><br>
+            <span class="logo-vintage">DE QUALITE</span>
+          </div>
+          <h1>Passer commande</h1>
+          <p>Remplis le formulaire, on te confirme ta commande sur WhatsApp</p>
+        </div>
+
+        <!-- Récap maillot -->
+        <div class="maillot-recap">
+          <div class="recap-img">
+            <img src="" alt="" id="recap-photo" style="display:none;">
+            <svg id="recap-placeholder" viewBox="0 0 24 24" fill="none" stroke="#bbb" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20.38 3.46L16 2a4 4 0 01-8 0L3.62 3.46a2 2 0 00-1.34 2.23l.58 3.57a1 1 0 00.99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 002-2V10h2.15a1 1 0 00.99-.84l.58-3.57a2 2 0 00-1.34-2.23z"/>
+            </svg>
+          </div>
+          <div class="recap-info">
+            <div class="recap-club" id="recap-nom">Maillot sélectionné</div>
+            <div class="recap-detail" id="recap-detail">Championnat · Saison</div>
+          </div>
+          <div class="recap-prix" id="recap-prix"> 9500 F</div>
+        </div>
+
+        <!-- Formulaire -->
+        <div class="cmd-form">
+
+          <!-- Section : Infos client -->
+          <p class="form-section">Vos informations <span class="required">*</span></p>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="client-nom">Prénom &amp; Nom <span class="required">*</span></label>
+              <input type="text" id="client-nom" placeholder="Ex : Konan Jean" autocomplete="name"/>
+            </div>
+            <div class="form-group">
+              <label for="client-tel">Numéro de téléphone <span class="required">*</span></label>
+              <input type="tel" id="client-tel" placeholder="Ex : 07 00 00 00 00" autocomplete="tel"/>
+            </div>
+          </div>
+
+          <!-- Section : Détails maillot -->
+          <p class="form-section">Détails du maillot</p>
+
+          <div class="form-group">
+            <label>Taille <span class="required">*</span></label>
+            <div class="tailles">
+              <button type="button" class="taille-btn" onclick="selectTaille(this)">S</button>
+              <button type="button" class="taille-btn" onclick="selectTaille(this)">M</button>
+              <button type="button" class="taille-btn" onclick="selectTaille(this)">L</button>
+              <button type="button" class="taille-btn" onclick="selectTaille(this)">XL</button>
+              <button type="button" class="taille-btn" onclick="selectTaille(this)">XXL</button>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Type de maillot <span class="required">*</span></label>
+            <div class="type-maillot">
+              <button type="button" class="type-btn active" onclick="selectType(this)">Domicile</button>
+              <button type="button" class="type-btn" onclick="selectType(this)">Extérieur</button>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="qty">Quantité</label>
+            <div class="qty-control">
+              <button type="button" onclick="changeQty(-1)">−</button>
+              <input type="number" id="qty" value="1" min="1" max="99" readonly/>
+              <button type="button" onclick="changeQty(1)">+</button>
+            </div>
+          </div>
+
+          <!-- Section : Personnalisation -->
+          <p class="form-section">Personnalisation <span class="form-section-note">(optionnel)</span></p>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="nom-floquer">Nom à floquer</label>
+              <input type="text" id="nom-floquer" placeholder="Ex : KOUASSI" maxlength="20"/>
+            </div>
+            <div class="form-group">
+              <label for="num-floquer">Numéro à floquer</label>
+              <input type="text" id="num-floquer" placeholder="Ex : 10" maxlength="3"/>
+            </div>
+          </div>
+          <p class="perso-note">Laisse vide si tu ne veux pas de personnalisation</p>
+
+          <!-- Section : Livraison -->
+          <p class="form-section">Livraison</p>
+
+          <div class="form-group">
+            <label for="adresse">Adresse de livraison <span class="required">*</span></label>
+            <textarea id="adresse" placeholder="Ex : Cocody Angré, près du carrefour Shell, immeuble bleu..."></textarea>
+          </div>
+
+          <!-- Bouton -->
+          <button type="button" class="btn-whatsapp" onclick="envoyerCommande()">
+            <svg viewBox="0 0 24 24" fill="white">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+            Commander via WhatsApp
+          </button>
+          <p class="cmd-note">Tu seras redirigé vers WhatsApp avec tous les détails de ta commande</p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let taille = null;
+    let type   = 'Domicile';
+
+    /* ── Récupère les paramètres de l'URL ── */
+    window.addEventListener('DOMContentLoaded', function () {
+      const params = new URLSearchParams(window.location.search);
+      if (params.get('club'))   document.getElementById('recap-nom').textContent    = decodeURIComponent(params.get('club'));
+      if (params.get('detail')) document.getElementById('recap-detail').textContent = decodeURIComponent(params.get('detail'));
+      if (params.get('prix'))   document.getElementById('recap-prix').textContent   = decodeURIComponent(params.get('prix'));
+      if (params.get('photo')) {
+        const img = document.getElementById('recap-photo');
+        img.src = decodeURIComponent(params.get('photo'));
+        img.style.display = 'block';
+        document.getElementById('recap-placeholder').style.display = 'none';
+      }
+    });
+
+    function selectTaille(btn) {
+      document.querySelectorAll('.taille-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      taille = btn.textContent;
+    }
+
+    function selectType(btn) {
+      document.querySelectorAll('.type-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      type = btn.textContent;
+    }
+
+    function changeQty(delta) {
+      const input = document.getElementById('qty');
+      input.value = Math.max(1, Math.min(99, parseInt(input.value) + delta));
+    }
+
+    function clearErrors() {
+      document.querySelectorAll('.error').forEach(el => el.classList.remove('error'));
+    }
+
+    function envoyerCommande() {
+      clearErrors();
+
+      const clientNom = document.getElementById('client-nom').value.trim();
+      const clientTel = document.getElementById('client-tel').value.trim();
+      const adresse   = document.getElementById('adresse').value.trim();
+      const club      = document.getElementById('recap-nom').textContent;
+      const detail    = document.getElementById('recap-detail').textContent;
+      const prix      = document.getElementById('recap-prix').textContent;
+      const qty       = document.getElementById('qty').value;
+      const nomFloq   = document.getElementById('nom-floquer').value.trim();
+      const numFloq   = document.getElementById('num-floquer').value.trim();
+
+      /* Validation */
+      let valid = true;
+      if (!clientNom) { document.getElementById('client-nom').classList.add('error'); valid = false; }
+      if (!clientTel) { document.getElementById('client-tel').classList.add('error'); valid = false; }
+      if (!taille)    { document.querySelector('.tailles').classList.add('error-block'); valid = false; }
+      if (!adresse)   { document.getElementById('adresse').classList.add('error'); valid = false; }
+      if (!valid)     { document.querySelector('.error, .error-block').scrollIntoView({behavior:'smooth', block:'center'}); return; }
+
+      /* Construction du message WhatsApp */
+      let msg = `🛍️ *NOUVELLE COMMANDE — Maillots de Qualité*\n\n`;
+      msg += `👤 *Client :* ${clientNom}\n`;
+      msg += `📞 *Téléphone :* ${clientTel}\n\n`;
+      msg += `🎽 *Maillot :* ${club}\n`;
+      msg += `📋 *Championnat :* ${detail}\n`;
+      msg += `📦 *Type :* ${type}\n`;
+      msg += `📏 *Taille :* ${taille}\n`;
+      msg += `🔢 *Quantité :* ${qty}\n`;
+      if (nomFloq) msg += `✍️ *Nom à floquer :* ${nomFloq.toUpperCase()}\n`;
+      if (numFloq) msg += `🔟 *Numéro à floquer :* ${numFloq}\n`;
+      msg += `📍 *Adresse de livraison :* ${adresse}\n`;
+      msg += `💰 *Prix unitaire :* ${prix}\n`;
+      msg += `\n_Merci de confirmer ma commande !_ 🙏`;
+
+      window.open(`https://wa.me/22585802839?text=${encodeURIComponent(msg)}`, '_blank');
+    }
+  </script>
+
+</body>
+</html>

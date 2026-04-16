@@ -1,0 +1,427 @@
+/* ========================================================
+   COMMANDER.CSS — Page de commande
+   ======================================================== */
+
+.cmd-body {
+  background: #f5f5f5;
+  margin: 0;
+}
+
+.cmd-page {
+  min-height: 100vh;
+  background: #f5f5f5;
+  padding: 40px 20px 60px;
+}
+
+.cmd-container {
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+/* ── Lien retour ── */
+.cmd-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #888;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+  margin-bottom: 28px;
+  transition: color 0.2s;
+}
+
+.cmd-back:hover {
+  color: #111;
+}
+
+.cmd-back svg {
+  width: 16px;
+  height: 16px;
+  stroke: currentColor;
+  fill: none;
+}
+
+/* ── Carte principale ── */
+.cmd-card {
+  background: #fff;
+  border-radius: 16px;
+  border: 0.5px solid #e0e0e0;
+  overflow: hidden;
+}
+
+/* ── En-tête ── */
+.cmd-header {
+  background: #1a1a1a;
+  padding: 24px 28px;
+}
+
+.cmd-header .logo-text {
+  font-family: 'Montserrat', sans-serif;
+  font-style: italic;
+  font-weight: 900;
+  font-size: 16px;
+  line-height: 1;
+  margin-bottom: 14px;
+}
+
+.cmd-header .logo-maillots {
+  color: transparent;
+  -webkit-text-stroke: 1.5px #F5A623;
+}
+
+.cmd-header .logo-vintage {
+  color: #fff;
+  font-size: 20px;
+}
+
+.cmd-header h1 {
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.cmd-header p {
+  color: rgba(255, 255, 255, 0.5);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+}
+
+/* ── Récap maillot ── */
+.maillot-recap {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: #f8f8f8;
+  padding: 16px 28px;
+  border-bottom: 0.5px solid #ebebeb;
+}
+
+.recap-img {
+  width: 56px;
+  height: 56px;
+  border-radius: 8px;
+  background: #e8e8e8;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.recap-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.recap-img svg {
+  width: 28px;
+  height: 28px;
+}
+
+.recap-club {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: #111;
+}
+
+.recap-detail {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  color: #888;
+  margin-top: 2px;
+}
+
+.recap-prix {
+  margin-left: auto;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: #E8821A;
+  white-space: nowrap;
+}
+
+/* ── Formulaire ── */
+.cmd-form {
+  padding: 28px;
+}
+
+.form-section {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  color: #bbb;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin: 24px 0 16px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.form-section:first-child {
+  margin-top: 0;
+}
+
+.form-section-note {
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0;
+  color: #ccc;
+}
+
+.required {
+  color: #E8821A;
+}
+
+.form-group {
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  display: block;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  color: #444;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 11px 14px;
+  border: 1.5px solid #e0e0e0;
+  border-radius: 8px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  color: #111;
+  background: #fff;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #E8821A;
+}
+
+.form-group input.error,
+.form-group textarea.error {
+  border-color: #e74c3c;
+  background: #fff8f8;
+}
+
+.error-block {
+  padding: 8px;
+  border-radius: 8px;
+  outline: 2px solid #e74c3c;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 90px;
+  line-height: 1.6;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+/* ── Sélecteur taille ── */
+.tailles {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.taille-btn {
+  width: 50px;
+  height: 42px;
+  border: 1.5px solid #e0e0e0;
+  border-radius: 8px;
+  background: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: #555;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.taille-btn:hover {
+  border-color: #E8821A;
+  color: #E8821A;
+}
+
+.taille-btn.active {
+  border-color: #E8821A;
+  background: #E8821A;
+  color: #fff;
+}
+
+/* ── Sélecteur type ── */
+.type-maillot {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.type-btn {
+  padding: 12px;
+  border: 1.5px solid #e0e0e0;
+  border-radius: 8px;
+  background: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: #555;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: center;
+}
+
+.type-btn:hover {
+  border-color: #E8821A;
+  color: #E8821A;
+}
+
+.type-btn.active {
+  border-color: #E8821A;
+  background: #E8821A;
+  color: #fff;
+}
+
+/* ── Quantité ── */
+.qty-control {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+}
+
+.qty-control button {
+  width: 40px;
+  height: 42px;
+  border: 1.5px solid #e0e0e0;
+  background: #fff;
+  font-size: 20px;
+  font-weight: 500;
+  color: #555;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.qty-control button:first-child {
+  border-radius: 8px 0 0 8px;
+  border-right: none;
+}
+
+.qty-control button:last-child {
+  border-radius: 0 8px 8px 0;
+  border-left: none;
+}
+
+.qty-control button:hover {
+  background: #f5f5f5;
+  color: #E8821A;
+}
+
+.qty-control input {
+  width: 60px;
+  height: 42px;
+  border: 1.5px solid #e0e0e0;
+  border-left: none;
+  border-right: none;
+  border-radius: 0;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: #111;
+  outline: none;
+  padding: 0;
+}
+
+/* ── Note personnalisation ── */
+.perso-note {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  color: #aaa;
+  font-style: italic;
+  margin-top: -10px;
+  margin-bottom: 4px;
+}
+
+/* ── Bouton WhatsApp ── */
+.btn-whatsapp {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  padding: 15px;
+  background: #25D366;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 24px;
+  transition: opacity 0.2s;
+  letter-spacing: 0.02em;
+}
+
+.btn-whatsapp:hover {
+  opacity: 0.9;
+}
+
+.btn-whatsapp svg {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+}
+
+.cmd-note {
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  color: #aaa;
+  margin-top: 10px;
+}
+
+/* ── Responsive mobile ── */
+@media (max-width: 500px) {
+  .cmd-page {
+    padding: 24px 12px 48px;
+  }
+
+  .cmd-form {
+    padding: 20px 16px;
+  }
+
+  .cmd-header {
+    padding: 20px;
+  }
+
+  .maillot-recap {
+    padding: 14px 16px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+}

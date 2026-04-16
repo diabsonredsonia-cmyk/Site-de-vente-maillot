@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maillots Vintage - Collection Authentique</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- Navigation -->
+<nav>
+    <div class="nav-logo">VINTAGE</div>
+    <div class="nav-links">
+        <a href="#accueil">Accueil</a>
+        <a href="#collection">Collection</a>
+        <a href="#contact">Contact</a>
+        <button class="btn-panier">Panier</button>
+    </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero-container">
+    <!-- Contenu texte -->
+    <div class="hero-content">
+        <div>
+            <p class="hero-label">Maillots rares et authentiques</p>
+            <h1 class="hero-title">
+                Maillots<br/>Vintage
+            </h1>
+        </div>
+
+        <p class="hero-description">
+            Découvre notre collection de maillots vintage authentiques. Des pièces rares, des souvenirs d'époque, des trésors du sport.
+        </p>
+
+        <!-- Badges info -->
+        <div class="info-badges">
+            <div class="info-badge">
+                <span class="info-badge-icon">✓</span>
+                <span class="info-badge-text">Livraison partout à Abidjan</span>
+            </div>
+            <div class="info-badge">
+                <span class="info-badge-icon">✓</span>
+                <span class="info-badge-text">Personnalisation (Nom + Numéro)</span>
+            </div>
+            <div class="info-badge">
+                <span class="info-badge-icon">✓</span>
+                <span class="info-badge-text">Quantité limitée</span>
+            </div>
+        </div>
+
+        <!-- CTA Buttons -->
+        <div class="cta-buttons">
+            <button class="btn-primary">Découvrir la collection</button>
+            <button class="btn-secondary">En savoir plus</button>
+        </div>
+    </div>
+
+    <!-- Grille de maillots -->
+    <div class="maillots-grid">
+        <!-- Maillot 1 -->
+        <div class="maillot-card">
+            <div class="maillot-image" style="background: linear-gradient(135deg, #1A2C4E, #0F1419); color: #C9A84C;">👕</div>
+            <h3 class="maillot-title">Chelsea 2005</h3>
+            <p class="maillot-subtitle">Edition rare • Disponible</p>
+        </div>
+
+        <!-- Maillot 2 -->
+        <div class="maillot-card">
+            <div class="maillot-image" style="background: linear-gradient(135deg, #2C1A1A, #0F1419); color: #E84040;">👕</div>
+            <h3 class="maillot-title">Man United 2000</h3>
+            <p class="maillot-subtitle">Signature • Limité</p>
+        </div>
+
+        <!-- Maillot 3 -->
+        <div class="maillot-card">
+            <div class="maillot-image" style="background: linear-gradient(135deg, #1A2C1A, #0F1419); color: #3A9FE8;">👕</div>
+            <h3 class="maillot-title">Real Madrid 1995</h3>
+            <p class="maillot-subtitle">Authentique • Stock limité</p>
+        </div>
+
+        <!-- Maillot 4 -->
+        <div class="maillot-card">
+            <div class="maillot-image" style="background: linear-gradient(135deg, #2C2C1A, #0F1419); color: #F4C94E;">👕</div>
+            <h3 class="maillot-title">Arsenal 2003</h3>
+            <p class="maillot-subtitle">Classique • Très rare</p>
+        </div>
+    </div>
+</section>
+
+</body>
+</html>
